@@ -11,21 +11,24 @@ echo "export PATH=$PATH:/usr/local/go/bin:~/go/bin" >> ~/.bash_profile
 source $HOME/.bash_profile
 [ ! -d ~/go/bin ] && mkdir -p ~/go/bin
 ```
-# set vars
+**set vars**
+```
 echo "export WALLET="wallet"" >> $HOME/.bash_profile
 echo "export MONIKER="test"" >> $HOME/.bash_profile
 echo "export QUICKSILVER_CHAIN_ID="quicksilver-2"" >> $HOME/.bash_profile
 echo "export QUICKSILVER_PORT="15"" >> $HOME/.bash_profile
 source $HOME/.bash_profile
+```
 
-# download binary
+**download binary**
+```
 cd $HOME
 rm -rf quicksilver
 git clone https://github.com/ingenuity-build/quicksilver
 cd quicksilver
 git checkout v1.6.2
 make install
-
+```
 # config and init app
 quicksilverd config node tcp://localhost:${QUICKSILVER_PORT}657
 quicksilverd config keyring-backend os
