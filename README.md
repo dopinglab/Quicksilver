@@ -29,15 +29,19 @@ cd quicksilver
 git checkout v1.6.2
 make install
 ```
-# config and init app
+**config and init app**
+```
 quicksilverd config node tcp://localhost:${QUICKSILVER_PORT}657
 quicksilverd config keyring-backend os
 quicksilverd config chain-id quicksilver-2
 quicksilverd init "test" --chain-id quicksilver-2
+```
 
-# download genesis and addrbook
+**download genesis and addrbook**
+```
 wget -O $HOME/.quicksilverd/config/genesis.json https://server-3.itrocket.net/mainnet/quicksilver/genesis.json
 wget -O $HOME/.quicksilverd/config/addrbook.json  https://server-3.itrocket.net/mainnet/quicksilver/addrbook.json
+```
 
 # set seeds and peers
 SEEDS="3b3c0037090a1b5ef9f7ac58ff79f33dffdd188a@quicksilver-mainnet-seed.itrocket.net:15656"
