@@ -85,7 +85,9 @@ sed -i 's|minimum-gas-prices =.*|minimum-gas-prices = "0.0001uqck"|g' $HOME/.qui
 sed -i -e "s/prometheus = false/prometheus = true/" $HOME/.quicksilverd/config/config.toml
 sed -i -e "s/^indexer *=.*/indexer = \"null\"/" $HOME/.quicksilverd/config/config.toml
 ```
-# create service file
+
+**create service file**
+```
 sudo tee /etc/systemd/system/quicksilverd.service > /dev/null <<EOF
 [Unit]
 Description=Quicksilver node
@@ -100,6 +102,7 @@ LimitNOFILE=65535
 [Install]
 WantedBy=multi-user.target
 EOF
+```
 
 # reset and download snapshot
 quicksilverd tendermint unsafe-reset-all --home $HOME/.quicksilverd
