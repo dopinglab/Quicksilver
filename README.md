@@ -114,7 +114,9 @@ if curl -s --head curl https://server-3.itrocket.net/mainnet/quicksilver/quicksi
 fi
 ```
 
-# enable and start service
+**enable and start service**
+```
 sudo systemctl daemon-reload
 sudo systemctl enable quicksilverd
 sudo systemctl restart quicksilverd && sudo journalctl -u quicksilverd -f
+```
